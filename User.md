@@ -53,6 +53,13 @@ function User(){
                 }
             }
         });
+},
+    list : function (callback){
+        let sql = 'SELECT* Title FROM Book_T';
+        pool.query(sql,function(err,ret){
+            if(err) console.log(err);
+            callback();
+        });
 }
 }    
  module.exports = User;          
